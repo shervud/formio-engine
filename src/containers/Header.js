@@ -4,7 +4,7 @@ import {PropTypes} from 'prop-types';
 import {Link} from 'react-router-dom';
 import {push} from "connected-react-router";
 import NavLink from './NavLink';
-import { selectRoot, logout } from "react-formio";
+import { selectRoot, logout } from "../react-formio";
 import {AuthConfig} from "../config";
 
 const Header = class extends Component {
