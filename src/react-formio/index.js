@@ -12,7 +12,8 @@ export {
   WizardBuilder,
   editFormUtils,
 };*/
+console.log('react-formio is loaded');
 
 export * from './components';
 export * from './modules';
-export {Components, Formio, Utils} from '../formiojs';
+export {Components, Formio} from '../formiojs';

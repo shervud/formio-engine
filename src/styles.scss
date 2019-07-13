@@ -37,6 +37,12 @@ $dark:          $gray-800;
 $fa-font-path: '../node_modules/font-awesome/fonts';
 @import '~font-awesome/scss/font-awesome';
 @import '~formiojs/dist/formio.full.css';
+@import '~intl-tel-input/build/css/intlTelInput.css';
+
+.formio-component .iti {
+  display: block;
+}
+
 
 .logo {
   height: 1.9em;

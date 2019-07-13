@@ -4,12 +4,33 @@ import { saveForm, selectError, FormEdit, Errors } from '../../react-formio';
 import {push} from 'connected-react-router';
 
 const Create = props => {
+  const options = {
+    builder: {
+      basic: false,
+      advanced: false,
+      layout: false, data: false,
+      customBasic: {
+        title: 'My list',
+        default: true,
+        weight: 0,
+        components: {
+          textfield: true,
+          textarea: true,
+          email: true,
+          phoneNumber: true,
+          hidden: true,
+          phoneNumberNew: true
+        }
+      }
+    }
+  };
+
   return (
     <div>
       <h2>Create Form</h2>
       <hr />
       <Errors errors={props.errors} />
-      <FormEdit {...props} />
+      <FormEdit {...props} options={options} />
     </div>
   );
 }

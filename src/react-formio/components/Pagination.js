@@ -97,7 +97,9 @@ export default class extends Component {
               className="page-link"
               style={{cursor: 'pointer'}}
               onClick={() => {
-                activePage !== 1 ? onSelect(activePage-1) : null;
+                if (activePage !== 1) {
+                  onSelect(activePage-1);
+                }
               }}
               >
               {prev}
@@ -151,7 +153,9 @@ export default class extends Component {
               className="page-link"
               style={{cursor: 'pointer'}}
               onClick={() => {
-                activePage !== pages ? onSelect(activePage+1) : null;
+                if (activePage !== pages) {
+                  onSelect(activePage + 1);
+                }
               }}
               >
               {next}

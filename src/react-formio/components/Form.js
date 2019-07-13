@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import EventEmitter from 'eventemitter2';
 import AllComponents from 'formiojs/components';
 import Components from 'formiojs/components/Components';
-Components.setComponents(AllComponents);
 import FormioForm from 'formiojs/Form';
+Components.setComponents(AllComponents);
 
 export default class Form extends Component {
   static propTypes = {
@@ -13,8 +13,8 @@ export default class Form extends Component {
     form: PropTypes.object,
     submission: PropTypes.object,
     options: PropTypes.shape({
-      readOnly: PropTypes.boolean,
-      noAlerts: PropTypes.boolean,
+      readOnly: PropTypes.bool,
+      noAlerts: PropTypes.bool,
       i18n: PropTypes.object,
       template: PropTypes.string,
     }),

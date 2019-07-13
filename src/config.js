@@ -1,5 +1,5 @@
-var PROJECT_URL = 'https://reactstarter.form.io';
-var API_URL = 'https://api.form.io';
+var PROJECT_URL = 'https://epbygomw0357.gomel.epam.com:3001';
+var API_URL = 'https://epbygomw0357.gomel.epam.com:3001';
 
 var query = {};
 window.location.search.substr(1).split('&').forEach(function(item) {
