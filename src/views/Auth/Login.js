@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Form } from '../../react-formio';
-import { push } from 'connected-react-router'
+import { Form, setUser } from '../../react-formio';
+import { push } from 'connected-react-router';
 import {AppConfig, AuthConfig} from '../../config';
-import { setUser } from '../../react-formio';
 
 const Login = class  extends Component {
   render() {

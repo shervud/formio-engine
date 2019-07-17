@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import { Form } from '../../react-formio';
+import { Form, setUser } from '../../react-formio';
 import { AppConfig, AuthConfig } from "../../config";
-import { setUser } from "../../react-formio";
 import {push} from "connected-react-router";
 
 const Register = class extends Component {

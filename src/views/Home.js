@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import {PropTypes} from 'prop-types';
 import Hero from '../containers/Hero';
-import { selectRoot } from "../react-formio";
+import { selectRoot } from '../react-formio';
 
 const Home = class extends Component {
   static propTypes = {

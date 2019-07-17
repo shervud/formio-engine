@@ -154,7 +154,7 @@ export default class extends Component {
               style={{cursor: 'pointer'}}
               onClick={() => {
                 if (activePage !== pages) {
-                  onSelect(activePage + 1);
+                  onSelect(activePage+1);
                 }
               }}
               >

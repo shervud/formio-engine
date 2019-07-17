@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { saveForm, selectError, FormEdit, Errors } from '../../react-formio';
+import { Formio, saveForm, selectError, FormEdit, Errors } from '../../react-formio';
 import {push} from 'connected-react-router';
+import _get from 'lodash/get';
 
 const Create = props => {
   const options = {
@@ -30,7 +31,7 @@ const Create = props => {
       <h2>Create Form</h2>
       <hr />
       <Errors errors={props.errors} />
-      <FormEdit {...props} options={options} />
+      <FormEdit {...props} optionsSSS={options} />
     </div>
   );
 }
@@ -46,15 +47,23 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     saveForm: (form) => {
-      const newForm = {
-        ...form,
-        tags: ['common'],
-      };
-      dispatch(saveForm('form', newForm, (err, form) => {
-        if (!err) {
-          dispatch(push(`/form/${form._id}`))
-        }
-      }))
+      Formio.accessInfo()
+        .then(access => {
+          const anonymous = _get(access, 'roles.anonymous._id', '');
+          let newForm = {
+            ...form,
+            tags: ['common'],
+            submissionAccess: [{
+              roles: [anonymous],
+              type: "create_own"
+            }]
+          };
+          dispatch(saveForm('form', newForm, (err, form) => {
+            if (!err) {
+              dispatch(push(`/form/${form._id}`))
+            }
+          }))
+        });
     }
   }
 }
